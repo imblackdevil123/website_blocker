@@ -1,0 +1,10 @@
+<p>Hi! In case you didn't understand the <code>if not any(website in line for website in website_list) </code> part in the previous video, here is another example:</p><pre class="prettyprint linenums">&gt;&gt;&gt; lines  = ["trees are good", "pool is fresh", "face is round"]
+&gt;&gt;&gt; website_list = ["face", "clock", "trend"]
+&gt;&gt;&gt; for line in lines:
+...     any(website in line for website in website_list)
+... 
+False
+False
+True</pre><p>We start iterating over the items of <code>website_list</code> using a <code>for</code> loop. In the first iteration we would have:</p><p><code>any(website in "trees are good" for website in website_list)</code></p><p>Inside the parenthesis of <code>any()</code> there's another loop that iterates over <code>website_list</code>:</p><pre class="prettyprint linenums">("face" in "trees are good")
+("clock" in "trees are good")
+("trend" in "trees are good")</pre><p>If <code>any</code> of the above is <code>True</code> you get the expression evaluated to True. In this case none of them is True, so you get <code>False</code>. </p><p>If you want to return <code>True</code> (if all of them are <code>True</code>), use <code>all()</code> instead of <code>any()</code>.</p><p>So, the part <code>any(website in line for website in website_list)</code> will either be equal to <code>True</code> or <code>False</code>. </p>
